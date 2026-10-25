@@ -1,0 +1,20 @@
+# Secrets
+.env
+
+# Persistent application data
+gitlab/config/
+gitlab/data/
+gitlab/logs/
+gitlab-runner/config/
+rustfs/data/
+
+# Backups and runtime logs
+backups/
+logs/
+backup/*.log
+backup/*.tmp
+
+# Local backups and temporary files
+*.tmp
+*.bak
+*.before-*

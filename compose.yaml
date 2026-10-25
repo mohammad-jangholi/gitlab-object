@@ -1,0 +1,14 @@
+name: gitlab-stack
+
+include:
+  - path: ./rustfs/compose.yaml
+    project_directory: ./rustfs
+    env_file: .env
+
+  - path: ./gitlab/compose.yaml
+    project_directory: ./gitlab
+    env_file: .env
+
+  - path: ./gitlab-runner/compose.yaml
+    project_directory: ./gitlab-runner
+    env_file: .env
