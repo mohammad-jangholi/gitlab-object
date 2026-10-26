@@ -12,3 +12,9 @@ include:
   - path: ./gitlab-runner/compose.yaml
     project_directory: ./gitlab-runner
     env_file: .env
+
+  - path: ./mail/compose.yaml
+    project_directory: ./mail
+
+  - path: ./notifier/compose.yaml
+    project_directory: ./notifier

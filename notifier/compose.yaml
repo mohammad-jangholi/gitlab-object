@@ -1,0 +1,23 @@
+services:
+  gitlab-notifier:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gitlab-notifier
+    restart: unless-stopped
+    environment:
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      MAIL_FROM: gitlab@jani.com
+      MAIL_TO: root@jani.com
+    volumes:
+      - /opt/gitlab-stack/notifier/login-events:/login-events:ro
+      - ./state:/state
+      - ./webhook_secret:/run/secrets/webhook_secret:ro
+    networks:
+      - default
+
+networks:
+  default:
+    name: gitlab-stack_default
+    external: true

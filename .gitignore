@@ -18,3 +18,5 @@ backup/*.tmp
 *.tmp
 *.bak
 *.before-*
+
+.README.md.bak
